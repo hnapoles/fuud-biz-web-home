@@ -21,7 +21,7 @@ export default function Nav() {
                     Menu open: "hidden", Menu closed: "block"
                   */}
                   <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" strokeLineJoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                   {/* Icon when menu is open. */}
                   {/*
@@ -30,7 +30,7 @@ export default function Nav() {
                     Menu open: "block", Menu closed: "hidden"
                   */}
                   <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" strokeLineJoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
@@ -84,26 +84,3 @@ export default function Nav() {
     </div>
   )
 }
-
-/*
-<nav>
-      <ul className="flex items-center justify-between p-8">
-        <li>
-          <Link href="/">
-            <a className="text-blue-500 no-underline text-accent-1 dark:text-blue-300">
-              Home
-            </a>
-          </Link>
-        </li>
-        <ul className="flex items-center justify-between space-x-4">
-          {navLinks.map(({ href, label }) => (
-            <li key={`${href}${label}`}>
-              <a href={href} className="no-underline btn-blue">
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </ul>
-    </nav>
-*/
