@@ -7,9 +7,6 @@ import "tailwindcss/tailwind.css";
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Nav/>
       <Component {...pageProps} />
       <Footer/>
