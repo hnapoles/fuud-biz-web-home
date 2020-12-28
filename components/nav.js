@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import navLinks from '../constants/navLinks';
 import TopMenuLink from './topMenuLink';
+import EnvBadge from '../constants/envBadge';
 
 export default function Nav() {
   return (
@@ -81,6 +82,10 @@ export default function Nav() {
           
         </div>
       </nav>
+      { process.env.NODE_ENV !== 'production' &&
+        <EnvBadge/>
+      }
+      
     </div>
   )
 }

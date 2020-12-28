@@ -29,10 +29,7 @@ export default function FAQPage() {
                   <p className="mt-4 text-lg text-gray-500">Can’t find the answer you’re looking for? Reach out to our <a href={`mailto:${supportEmail}`} className="font-medium text-indigo-600 hover:text-indigo-500">customer support</a> team.</p>
                 </div>
                 <div className="mt-12 lg:mt-0 lg:col-span-2">
-                  <dl className="space-y-12">
-                  
-
-                  
+                  <dl className="space-y-12">  
                     {FAQ.map( ({ id, q, a }) => (
                         <div key={id}>
                           <dt className="text-lg leading-6 font-medium text-gray-900">
@@ -42,10 +39,7 @@ export default function FAQPage() {
                             {a}
                           </dd>
                         </div>
-                    ))}
-                
-
-                    
+                    ))}                    
                   </dl>
                 </div>
               </div>
