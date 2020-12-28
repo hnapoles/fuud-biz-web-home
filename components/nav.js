@@ -27,7 +27,8 @@ export default function Nav() {
 
                     Menu open: "hidden", Menu closed: "block"
                   */}
-                  <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <svg className={"h-6 w-6" + (navbarOpen ? " hidden" : " block") }
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                   {/* Icon when menu is open. */}
@@ -36,7 +37,8 @@ export default function Nav() {
 
                     Menu open: "block", Menu closed: "hidden"
                   */}
-                  <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <svg className={"h-6 w-6" + (navbarOpen ? " block" : " hidden") }
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -81,7 +83,7 @@ export default function Nav() {
           <div className="pt-2 pb-3 space-y-1">
               {navLinks.map(({ href, label }) => (
                       <DropDownMenuLink key={`${href}${label}`} href={href}>
-                        <a>
+                        <a onClick={() => setNavbarOpen(!navbarOpen)}>
                           {label}
                         </a>
                       </DropDownMenuLink>
