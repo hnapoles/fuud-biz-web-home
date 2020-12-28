@@ -4,6 +4,7 @@ import navLinks from '../constants/navLinks';
 import TopMenuLink from './TopMenuLink';
 import DropDownMenuLink from './DropDownMenuLink';
 import EnvBadge from './EnvBadge';
+import Image from 'next/image'
 
 export default function Nav() {
 
@@ -44,8 +45,14 @@ export default function Nav() {
                 </button>
               </div>
               <div className="flex-shrink-0 flex items-center">
+                {/* 
                 <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
                 <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg" alt="Workflow" />
+                */}
+                <Image  src="/images/logo_f3.png" alt="fuud.biz" width="75" height="75" /> 
+                {/* 
+                <Image className="hidden lg:block h-8 w-auto" src="/images/logo_fullname3.png" alt="fuud.biz" width="75" height="75"/>
+                */}
               </div>
               <div className="hidden md:ml-6 md:flex md:space-x-8">
                     {navLinks.map(({ href, label }) => (
@@ -58,7 +65,12 @@ export default function Nav() {
               
               </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center space-x-4">
+              <div className="flex-shrink-0">
+                <button type="button" className="relative inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <span>Sign up</span>
+                </button>
+              </div>
               <div className="flex-shrink-0">
                 <button type="button" className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   {/* Heroicon name: plus 
@@ -91,7 +103,7 @@ export default function Nav() {
           </div>     
         </div>
       </nav>
-      { process.env.NODE_ENV !== 'production' &&
+      { process.env.NEXT_PUBLIC_NODE_ENV !== 'production' &&
         <EnvBadge/>
       }
       
