@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { supportEmail } from '../constants/emails';
-import FAQ from '../constants/faqs';
+import FAQ from '../constants/faqDetails';
 
 export default function FAQPage() {
   return (

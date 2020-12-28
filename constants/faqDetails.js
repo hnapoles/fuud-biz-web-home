@@ -1,7 +1,7 @@
-const FAQ = [
+const faqDetails = [
     {   id: 1,
         q: `How do you make holy water?`, 
-        a: `You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.`
+        a: `You boil the hell out of it.`
     },
     {   id: 2,
         q: `What's the best thing about Switzerland?`, 
@@ -18,4 +18,4 @@ const FAQ = [
     
 ]
 
-export default FAQ;
+export default faqDetails;
