@@ -23,7 +23,16 @@ const options = {
     Providers.Google({
         clientId: process.env.GOOGLE_ID,
         clientSecret: process.env.GOOGLE_SECRET,
-    })
+    }),
+    Providers.Apple({
+      clientId: process.env.APPLE_ID,
+      clientSecret: { 
+        appleId: process.env.APPLE_ID,
+        teamId: process.env.APPLE_TEAM_ID,
+        privateKey: process.env.APPLE_PRIVATE_KEY,
+        keyId: process.env.APPLE_KEY_ID,
+      }
+    }),
   ],
   //database: process.env.DATABASE_URL,
   session: {
@@ -36,13 +45,21 @@ const options = {
     encryption: true,
   },
   callbacks: {
-    redirect: async (url, _) => {
+    
+    redirect: async (url, baseUrl) => {
       if (url === '/api/auth/signin') {
-        return Promise.resolve('/about')
+        return Promise.resolve(process.env.NEXT_PUBLIC_DEFAULT_URL_AFTER_SIGNIN || '/')
+      }
+      if (url.startsWith(baseUrl + '/auth/signin')) {
+        return Promise.resolve(process.env.NEXT_PUBLIC_DEFAULT_URL_AFTER_SIGNIN || '/')
       }
       return Promise.resolve(url)
-    },
-},
+    }
+
+  },
+  pages: {
+    signIn: '/auth/signin'
+  }
 }
 
 export default (req, res) => NextAuth(req, res, options)
