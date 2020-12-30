@@ -11,11 +11,11 @@ import { signIn, signOut, useSession } from 'next-auth/client'
 export default function Nav() {
 
   const [navbarOpen, setNavbarOpen] = React.useState(false)
-  const [session, loading] = useSession()
+  //const [session, loading] = useSession()
 
-  if (loading) {
-    return <p>Loading...</p>
-  }
+  //if (loading) {
+  //  return <p>Loading...</p>
+  //}
 
   return (
     <div>

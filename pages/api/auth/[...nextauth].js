@@ -27,11 +27,15 @@ const options = {
     Providers.Apple({
       clientId: process.env.APPLE_ID,
       clientSecret: { 
-        appleId: process.env.APPLE_ID,
-        teamId: process.env.APPLE_TEAM_ID,
-        privateKey: process.env.APPLE_PRIVATE_KEY,
-        keyId: process.env.APPLE_KEY_ID,
+      appleId: process.env.APPLE_ID,
+      teamId: process.env.APPLE_TEAM_ID,
+      privateKey: process.env.APPLE_PRIVATE_KEY,
+      keyId: process.env.APPLE_KEY_ID,
       }
+    }),
+    Providers.Facebook({
+      clientId: process.env.FACEBOOK_ID,
+      clientSecret: process.env.FACEBOOK_SECRET
     }),
   ],
   //database: process.env.DATABASE_URL,
@@ -47,19 +51,24 @@ const options = {
   callbacks: {
     
     redirect: async (url, baseUrl) => {
+      /*
       if (url === '/api/auth/signin') {
         return Promise.resolve(process.env.NEXT_PUBLIC_DEFAULT_URL_AFTER_SIGNIN || '/')
       }
       if (url.startsWith(baseUrl + '/auth/signin')) {
         return Promise.resolve(process.env.NEXT_PUBLIC_DEFAULT_URL_AFTER_SIGNIN || '/')
       }
-      return Promise.resolve(url)
+      */
+      console.log('url', url)
+      console.log('base', baseUrl)
+      return Promise.resolve(url);
     }
-
+    
   },
   pages: {
     signIn: '/auth/signin'
-  }
+  },
+  
 }
 
 export default (req, res) => NextAuth(req, res, options)
